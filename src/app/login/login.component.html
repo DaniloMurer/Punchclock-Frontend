@@ -1,0 +1,15 @@
+
+<br>
+<div class="example-form">
+  <mat-form-field class="example-full-width" appearance="outline" color="primary" autofocus>
+    <mat-label>Username</mat-label>
+    <input style="color: white" matInput placeholder="Username" [formControl]="username">
+  </mat-form-field>
+  <br>
+  <br>
+  <mat-form-field class="example-full-width" appearance="outline" color="primary">
+    <mat-label>Password</mat-label>
+    <input style="color: white" type="password" matInput placeholder="Password" [formControl]="password">
+  </mat-form-field>
+  <button style="width: 500px" mat-flat-button color="primary" (click)="login()"><mat-icon>check</mat-icon>Sign-In</button>
+</div>
