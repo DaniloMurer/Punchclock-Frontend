@@ -5,6 +5,7 @@ import {Entry} from '../data/entry';
 import {EntryService} from '../service/entry.service';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {CreateDialogComponent} from './create-dialog/create-dialog.component';
+import {DeleteDialogComponent} from './delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -50,7 +51,10 @@ export class DashboardComponent implements OnInit {
   }
 
   public openDeleteEntryDialog(): void {
-    // TODO: Open Dialog
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(DeleteDialogComponent, dialogConfig);
   }
 
 }

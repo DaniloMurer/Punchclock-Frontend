@@ -34,8 +34,8 @@
 </table>
 
 <button mat-button color="primary" (click)="openCreateEntryDialog()">Create Entry</button>
-<button mat-button color="primary" (click)="openCreateEntryDialog()">Update Entry</button>
-<button mat-button color="primary" (click)="openCreateEntryDialog()">Delete Entry</button>
+<button mat-button color="primary" (click)="openUpdateEntryDialog()">Update Entry</button>
+<button mat-button color="primary" (click)="openDeleteEntryDialog()">Delete Entry</button>
 <div *ngIf="isAdmin">
   <button mat-button color="primary" (click)="openCreateEntryDialog()">Open Admin View</button>
 </div>
