@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
     this.isAdmin = payload.roles === 'ADMINISTRATOR';
 
     // Get the entries from user
-    this.entryService.getAllEntries().subscribe(data => {
+    this.entryService.getEntries().subscribe(data => {
       this.dataSource = data;
     });
   }
@@ -66,8 +66,8 @@ export class DashboardComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    dialogConfig.height = '99%';
-    dialogConfig.width = '99%';
+    dialogConfig.height = '100%';
+    dialogConfig.width = '100%';
     this.dialog.open(AdminDialogComponent, dialogConfig);
   }
 

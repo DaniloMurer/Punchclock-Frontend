@@ -11,7 +11,7 @@ export class EntryService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllEntries(): Observable<Entry[]> {
+  public getEntries(): Observable<Entry[]> {
     return this.http.get<Entry[]>(getEntryUrl());
   }
   public createEntry(entry: Entry): Observable<any> {
@@ -20,8 +20,13 @@ export class EntryService {
   public deleteEntry(entryId: number): Observable<any> {
     return this.http.delete(getEntryUrl() + `/${entryId}`, {observe: 'response'});
   }
-
   public updateEntry(entry: Entry): Observable<any> {
     return this.http.put(getEntryUrl(), entry);
+  }
+  public getAllEntries(): Observable<Entry[]> {
+    return this.http.get<Entry[]>(`${getEntryUrl()}/getAll`);
+  }
+  public confirmEntry(entryId: number): Observable<Entry> {
+    return this.http.put<Entry>(`${getEntryUrl()}/confirm/${entryId}`, {});
   }
 }

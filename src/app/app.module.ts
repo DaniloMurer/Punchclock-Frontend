@@ -28,6 +28,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { UpdateDialogComponent } from './dashboard/update-dialog/update-dialog.component';
 import { DeleteDialogComponent } from './dashboard/delete-dialog/delete-dialog.component';
 import { AdminDialogComponent } from './dashboard/admin-dialog/admin-dialog.component';
+import { ConfirmDialogComponent } from './dashboard/admin-dialog/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AdminDialogComponent } from './dashboard/admin-dialog/admin-dialog.comp
     CreateDialogComponent,
     UpdateDialogComponent,
     DeleteDialogComponent,
-    AdminDialogComponent
+    AdminDialogComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
