@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 import {Observable} from 'rxjs';
-import {getLoginUrl} from '../common/url';
+import {getLoginUrl, getSignUpUrl} from '../common/url';
 import {ApplicationUser} from '../data/application-user';
 
 @Injectable({
@@ -16,5 +16,9 @@ export class LoginService {
     const user = new ApplicationUser(0, username, password, new Array());
     console.log(user);
     return this.http.post<any>(getLoginUrl(), user, {observe: 'response'});
+  }
+
+  public createUser(user: ApplicationUser): Observable<ApplicationUser> {
+    return this.http.post<ApplicationUser>(getSignUpUrl(), user);
   }
 }

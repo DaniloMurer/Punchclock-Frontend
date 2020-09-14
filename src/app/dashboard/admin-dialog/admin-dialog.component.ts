@@ -3,6 +3,7 @@ import {Entry} from '../../data/entry';
 import {EntryService} from '../../service/entry.service';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component';
+import {CreateUserDialogComponent} from './create-user-dialog/create-user-dialog.component';
 
 @Component({
   selector: 'app-admin-dialog',
@@ -22,11 +23,18 @@ export class AdminDialogComponent implements OnInit {
     });
   }
 
-  public confirmEntry(): void {
+  public openConfirmEntryDialog(): void {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     this.dialog.open(ConfirmDialogComponent, dialogConfig);
+  }
+
+  public openCreateUserDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(CreateUserDialogComponent, dialogConfig);
   }
 
 }
