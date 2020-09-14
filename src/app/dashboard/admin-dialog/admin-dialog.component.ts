@@ -6,6 +6,9 @@ import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component'
 import {CreateUserDialogComponent} from './create-user-dialog/create-user-dialog.component';
 import {DeleteUserDialogComponent} from './delete-user-dialog/delete-user-dialog.component';
 import {UpdateUserDialogComponent} from './update-user-dialog/update-user-dialog.component';
+import {CreateCategoryDialogComponent} from './create-category-dialog/create-category-dialog.component';
+import {DeleteCategoryDialogComponent} from './delete-category-dialog/delete-category-dialog.component';
+import {UpdateCategoryDialogComponent} from './update-category-dialog/update-category-dialog.component';
 
 @Component({
   selector: 'app-admin-dialog',
@@ -52,5 +55,29 @@ export class AdminDialogComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     this.dialog.open(UpdateUserDialogComponent, dialogConfig);
+  }
+
+  public openCreateCategoryDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '70%';
+    this.dialog.open(CreateCategoryDialogComponent, dialogConfig);
+  }
+
+  public openDeleteCategoryDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '70%';
+    this.dialog.open(DeleteCategoryDialogComponent, dialogConfig);
+  }
+
+  public openUpdateCategoryDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '70%';
+    this.dialog.open(UpdateCategoryDialogComponent, dialogConfig);
   }
 }

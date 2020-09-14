@@ -33,6 +33,8 @@ import { CreateUserDialogComponent } from './dashboard/admin-dialog/create-user-
 import { DeleteUserDialogComponent } from './dashboard/admin-dialog/delete-user-dialog/delete-user-dialog.component';
 import { UpdateUserDialogComponent } from './dashboard/admin-dialog/update-user-dialog/update-user-dialog.component';
 import { CreateCategoryDialogComponent } from './dashboard/admin-dialog/create-category-dialog/create-category-dialog.component';
+import { DeleteCategoryDialogComponent } from './dashboard/admin-dialog/delete-category-dialog/delete-category-dialog.component';
+import { UpdateCategoryDialogComponent } from './dashboard/admin-dialog/update-category-dialog/update-category-dialog.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { CreateCategoryDialogComponent } from './dashboard/admin-dialog/create-c
     CreateUserDialogComponent,
     DeleteUserDialogComponent,
     UpdateUserDialogComponent,
-    CreateCategoryDialogComponent
+    CreateCategoryDialogComponent,
+    DeleteCategoryDialogComponent,
+    UpdateCategoryDialogComponent
   ],
   imports: [
     BrowserModule,
