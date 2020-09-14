@@ -1,0 +1,21 @@
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>username</mat-label>
+    <input matInput type="text" [formControl]="username">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" [formControl]="password">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <matlabel>Select Role</matlabel>
+    <mat-select placeholder="Select Role" [formControl]="role">
+      <mat-option *ngFor="let tempRole of roles" [value]="tempRole">
+        {{tempRole.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-button color="primary" (click)="createUser()">Create</button>
+</div>

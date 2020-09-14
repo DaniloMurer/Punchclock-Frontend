@@ -14,12 +14,44 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
+import {AuthenticationInterceptor} from './util/request.interceptor';
+import { CreateDialogComponent } from './dashboard/create-dialog/create-dialog.component';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { UpdateDialogComponent } from './dashboard/update-dialog/update-dialog.component';
+import { DeleteDialogComponent } from './dashboard/delete-dialog/delete-dialog.component';
+import { AdminDialogComponent } from './dashboard/admin-dialog/admin-dialog.component';
+import { ConfirmDialogComponent } from './dashboard/admin-dialog/confirm-dialog/confirm-dialog.component';
+import { CreateUserDialogComponent } from './dashboard/admin-dialog/create-user-dialog/create-user-dialog.component';
+import { DeleteUserDialogComponent } from './dashboard/admin-dialog/delete-user-dialog/delete-user-dialog.component';
+import { UpdateUserDialogComponent } from './dashboard/admin-dialog/update-user-dialog/update-user-dialog.component';
+import { CreateCategoryDialogComponent } from './dashboard/admin-dialog/create-category-dialog/create-category-dialog.component';
+import { DeleteCategoryDialogComponent } from './dashboard/admin-dialog/delete-category-dialog/delete-category-dialog.component';
+import { UpdateCategoryDialogComponent } from './dashboard/admin-dialog/update-category-dialog/update-category-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    CreateDialogComponent,
+    UpdateDialogComponent,
+    DeleteDialogComponent,
+    AdminDialogComponent,
+    ConfirmDialogComponent,
+    CreateUserDialogComponent,
+    DeleteUserDialogComponent,
+    UpdateUserDialogComponent,
+    CreateCategoryDialogComponent,
+    DeleteCategoryDialogComponent,
+    UpdateCategoryDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +67,18 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule,
+    MatTableModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

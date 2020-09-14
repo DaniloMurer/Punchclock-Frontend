@@ -1,0 +1,34 @@
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Entry Id</mat-label>
+    <input matInput type="number" [formControl]="entryId">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Check In</mat-label>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [formControl]="checkIn">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <br>
+    <input matInput type="time" [formControl]="checkInTime">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Check Out</mat-label>
+    <input matInput [matDatepicker]="picker2" placeholder="Choose a date" [formControl]="checkOut">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2 ></mat-datepicker>
+    <br>
+    <input matInput type="time" [formControl]="checkOutTime">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-select placeholder="Select Category" [formControl]="category">
+      <mat-option *ngFor="let cat of categories" [value]="cat.name">
+        {{cat.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-button color="primary" (click)="updateEntry()">Update</button>
+</div>
