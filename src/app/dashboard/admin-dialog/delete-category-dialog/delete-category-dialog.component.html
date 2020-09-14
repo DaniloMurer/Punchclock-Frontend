@@ -12,3 +12,11 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Category Id</mat-label>
+    <input matInput type="number" [formControl]="categoryId">
+  </mat-form-field>
+  <button mat-button color="primary" (click)="deleteCategory()">Delete</button>
+</div>
