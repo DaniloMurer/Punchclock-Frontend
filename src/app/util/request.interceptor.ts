@@ -1,13 +1,15 @@
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {CookieService} from 'ngx-cookie-service';
+import {Injectable} from '@angular/core';
 
 /**
  * Copyright Energyeet
  *
  * Intercept HTTP Request from the Resta client and modify it
  */
-export class AuthenticationInterceptor implements HttpInterceptor{
+@Injectable()
+export class AuthenticationInterceptor implements HttpInterceptor {
   constructor(private cookieService: CookieService) {}
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = this.cookieService.get('authorization');
