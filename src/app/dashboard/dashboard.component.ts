@@ -6,6 +6,8 @@ import {EntryService} from '../service/entry.service';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {CreateDialogComponent} from './create-dialog/create-dialog.component';
 import {DeleteDialogComponent} from './delete-dialog/delete-dialog.component';
+import {UpdateDialogComponent} from './update-dialog/update-dialog.component';
+import {AdminDialogComponent} from './admin-dialog/admin-dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -47,7 +49,10 @@ export class DashboardComponent implements OnInit {
   }
 
   public openUpdateEntryDialog(): void {
-    // TODO: Open Dialog
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(UpdateDialogComponent, dialogConfig);
   }
 
   public openDeleteEntryDialog(): void {
@@ -55,6 +60,15 @@ export class DashboardComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     this.dialog.open(DeleteDialogComponent, dialogConfig);
+  }
+
+  public openAdminDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.height = '99%';
+    dialogConfig.width = '99%';
+    this.dialog.open(AdminDialogComponent, dialogConfig);
   }
 
 }

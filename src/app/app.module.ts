@@ -25,13 +25,19 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { UpdateDialogComponent } from './dashboard/update-dialog/update-dialog.component';
+import { DeleteDialogComponent } from './dashboard/delete-dialog/delete-dialog.component';
+import { AdminDialogComponent } from './dashboard/admin-dialog/admin-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    CreateDialogComponent
+    CreateDialogComponent,
+    UpdateDialogComponent,
+    DeleteDialogComponent,
+    AdminDialogComponent
   ],
   imports: [
     BrowserModule,

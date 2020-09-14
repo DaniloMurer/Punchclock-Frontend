@@ -17,4 +17,11 @@ export class EntryService {
   public createEntry(entry: Entry): Observable<any> {
     return this.http.post(getEntryUrl(), entry, {observe: 'response'});
   }
+  public deleteEntry(entryId: number): Observable<any> {
+    return this.http.delete(getEntryUrl() + `/${entryId}`, {observe: 'response'});
+  }
+
+  public updateEntry(entry: Entry): Observable<any> {
+    return this.http.put(getEntryUrl(), entry);
+  }
 }
