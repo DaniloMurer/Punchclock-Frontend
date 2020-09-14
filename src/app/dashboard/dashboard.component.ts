@@ -20,11 +20,16 @@ export class DashboardComponent implements OnInit {
   isAdmin = false;
 
   ngOnInit(): void {
-
     // If the user is not authorized, navigate back to the login screen
     if (!this.cookieService.get('authorization')) {
       this.router.navigate(['login']);
     }
+
+    const base64String = this.cookieService.get('authorization').split('.')[1];
+    const base64 = base64String.replace('-', '+').replace('_', '/');
+    const payload = JSON.parse(atob(base64));
+    console.log(payload);
+    this.isAdmin = payload.roles === 'ADMINISTRATOR';
 
     // Get the entries from user
     this.entryService.getAllEntries().subscribe(data => {

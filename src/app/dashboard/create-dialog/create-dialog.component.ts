@@ -45,11 +45,4 @@ export class CreateDialogComponent implements OnInit {
       console.log(data);
     });
   }
-
-  private generateDateTimeString(date: string, time: string): string {
-    const dateArray = date.split(',');
-    dateArray[0] = dateArray[0].replace('.', '-');
-    dateArray[0] = dateArray[0].replace('.', '-');
-    return `${dateArray[0]}T${time}`;
-  }
 }
